@@ -10,6 +10,6 @@ header('Content-Type: text/html; charset=utf-8');
 $w=trim($_POST['word']);
 $arr= glob("./uploads/*.txt");
 foreach ($arr as $val){
-	 echo "в файле $val слово $w встречается"," ",substr_count(file_get_contents($val),$w )," ", "раз(а)","<br>";
+	 echo "в файле $val слово $w встречается"," ",substr_count(strtolower(file_get_contents($val)),$w )," ", "раз(а)","<br>";
      }
 ?>

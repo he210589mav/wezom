@@ -9,5 +9,5 @@ header('Content-Type: text/html; charset=utf-8');
 <?php
 $w=trim($_POST['word']);
 $file='./uploads/test.txt';
-echo "в файле $file слово $w встречается"," ",substr_count(file_get_contents($file),$w )," ", "раз(а)","<br>";
+echo "в файле $file слово $w встречается"," ",substr_count(strtolower(file_get_contents($file)),$w )," ", "раз(а)","<br>";
 ?>
