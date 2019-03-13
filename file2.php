@@ -4,12 +4,10 @@ header('Content-Type: text/html; charset=utf-8');
 <!--* Написать программу которая ищет слово в файле произвольной длины-->
 
 <form action="file2.php" method="POST">
-	Введите слово:<input name="world" type="text">
-	<input type="submit">
+	Введите слово:<input name="word" type="text">
+	<input type="submit"><br>
 <?php
-$w=trim($_POST['world']);
+$w=trim($_POST['word']);
 $file='./uploads/test.txt';
-if (strpos(file_get_contents($file), $w))
-echo "Искомое слово $w найдено";  
-else echo "Искомое слово $w отсутствует";
+echo "в файле $file слово $w встречается"," ",substr_count(file_get_contents($file),$w )," ", "раз(а)","<br>";
 ?>
